@@ -1,0 +1,79 @@
+C++
+
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+  int n, i, m=0, flag=0;  
+  cout<<"Enter the Number to check Prime: ";  
+  cin>>n;  
+  m=n/2;  
+  for(i = 2; i <= m; i++)  
+  {  
+      if(n % i == 0)  
+      {  
+          cout<<"Number is not Prime."<<endl;  
+          flag = 1;  
+          break;  
+      }  
+  }  
+  if (flag == 0)  
+      cout<<"Number is Prime."<<endl;  
+  return 0;  
+}  
+
+PYTHON
+
+nterms = int(input("How many terms? "))
+
+n1, n2 = 0, 1
+count = 0
+
+
+if nterms <= 0:
+   print("Please enter a positive integer")
+
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       n1 = n2
+       n2 = nth
+       count += 1
+
+JAVA
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class GreatestOfThree {
+    public static void main(String[] args) {
+        System.out.print("Please enter three integer values separated by comma: ");
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        
+        List<Integer> inputdata =  Arrays.stream(s.split(",")).map(Integer::parseInt).collect(Collectors.toList());
+
+        int a = inputdata.get(0);
+        int b = inputdata.get(1);
+        int c = inputdata.get(2);
+        
+        if (a>b && a>c){
+            System.out.println(a+" is the greatest");
+        }
+        else if (b>a && b>c){
+            System.out.println(b+" is the greatest");
+        }
+        else
+            System.out.println(c+" is the greatest");
+        
+        sc.close();
+    }
+}
